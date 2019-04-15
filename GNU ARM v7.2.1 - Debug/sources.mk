@@ -28,5 +28,10 @@ CPP_DEPS :=
 SUBDIRS := \
 CMSIS/EFM32GG \
 emlib \
+src/ATParser \
+src/Common \
+src/Nbiot \
+src/NovaSensor \
+src/Sensiron \
 src \
 

@@ -152,11 +152,9 @@ bool ATParser::recv(std::string response, ...) {
 	}
 	else {
 		if (strstr(actualResponse.c_str(), response.c_str()) != NULL) {
-			va_end(args);
 			return true;
 		}
 	}
 
-	va_end(args);
 	return false;
 }
