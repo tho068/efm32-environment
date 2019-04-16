@@ -9,7 +9,7 @@
 
 #include "retargetswo.h"
 
-#include "NovaSensor.h"
+#include "Sps30.h"
 #include "ATParser.h"
 #include "SensironCo2.h"
 #include "timer.h"
@@ -47,13 +47,12 @@ int main(void)
 	EnableClocks();
 	SysTick_Init();
 
-	NovaSensor 		sensor;
 	SensironCo2 	co2Sensor;
+	Sps30			pm(I2C1);
 	nbiot 			nb;
 
-	float 			pm10, ppm10, ppm25, pm25, ppco2;
+	float 			ppm10, ppm25, ppco2;
 	float			dpm10, dpm25, dco2;
-	uint32_t		rc;
 	uint32_t		previousTime, currentTime;
 
 	char 			payload[500];
@@ -62,20 +61,16 @@ int main(void)
 	currentTime = SysTick_GetTicks();
 
 	while (true) {
-		rc = sensor.Read(&pm10, &pm25);
+		pm.readMeasurement();
 		co2Sensor.getMeasurement();
 
-		if (rc != NOVA_SENSOR_OK) {
-			continue;
-		}
-
-		dpm10 = abs(pm10 - ppm10);
-		dpm25 = abs(pm25 - ppm25);
+		dpm10 = abs(pm.PM10() - ppm10);
+		dpm25 = abs(pm.PM25() - ppm25);
 		dco2 = abs(co2Sensor.Co2() - ppco2);
 
 		// Increase of 120 %
 		if (((dpm10 / ppm10) * 100 > 120) || ((dpm25 / ppm25) * 100 > 120) || (dco2 / ppco2) * 100 > 120) {
-			snprintf(payload, 500, "%.2f,%.2f,%.2f,%.2f,%.2f", pm10, pm25, co2Sensor.Co2(), co2Sensor.Humidity(), co2Sensor.Temperature());
+			snprintf(payload, 500, "%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f", pm.PM1(), pm.PM25(), pm.PM4(), pm.PM10(), pm.TPS(), co2Sensor.Co2(), co2Sensor.Humidity(), co2Sensor.Temperature());
 
 			nb.sendData(payload);
 
@@ -84,8 +79,8 @@ int main(void)
 		}
 
 		// Time to transmit measurement reached
-		if (1200000 < currentTime - previousTime) {
-			snprintf(payload, 500, "%.2f,%.2f,%.2f,%.2f,%.2f", pm10, pm25, co2Sensor.Co2(), co2Sensor.Humidity(), co2Sensor.Temperature());
+		if (600000 < currentTime - previousTime) {
+			snprintf(payload, 500, "%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f", pm.PM1(), pm.PM25(), pm.PM4(), pm.PM10(), pm.TPS(), co2Sensor.Co2(), co2Sensor.Humidity(), co2Sensor.Temperature());
 
 			nb.sendData(payload);
 
@@ -93,10 +88,12 @@ int main(void)
 			currentTime = previousTime;
 		}
 
-		ppm10 = pm10;
-		ppm25 = pm25;
+		ppm10 = pm.PM10();
+		ppm25 = pm.PM25();
 		ppco2 = co2Sensor.Co2();
 
 		currentTime = SysTick_GetTicks();
+
+		Delay(250);
 	}
 }

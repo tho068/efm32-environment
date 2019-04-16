@@ -22,6 +22,11 @@ nbiot::nbiot() {
 
 	Delay(1000);
 
+	modem.send("AT+CGACT=1,1");
+	modem.recv("OK");
+
+	Delay(1000);
+
 	open_socket();
 }
 
@@ -39,11 +44,6 @@ void nbiot::configuration(){
 
 void nbiot::connect() {
 	modem.send("AT+COPS=1,2,\"24201\"");
-	modem.recv("OK");
-
-	Delay(1000);
-
-	modem.send("AT+CGACT=1,1");
 	modem.recv("OK");
 
 	Delay(1000);
@@ -67,7 +67,7 @@ void nbiot::open_socket(){
 
 void nbiot::sendData(std::string payload) {
 	unsigned int 		len, ufd;
-	char 				data[200], hex[100];
+	char 				data[500] = {0}, hex[500] = {0};
 	const char 			*originial;
 
 	originial = payload.c_str();
@@ -77,10 +77,16 @@ void nbiot::sendData(std::string payload) {
 		sprintf(hex + j, "%02x", originial[i] & 0xff);
 	}
 
-	snprintf(data, 200, "AT+NSOST=%d,\"%s\",%d,%d,\"%s\"", fd, "172.16.15.14", 1234, payload.size(), hex);
+	snprintf(data, 500, "AT+NSOST=%d,\"%s\",%d,%d,\"%s\"", fd, "172.16.15.14", 1234, payload.size(), hex);
 
-	modem.send(data);
-	modem.recv("%d,%d", &ufd, &len);
+	while(true) {
+		modem.send(data);
+		int rc = modem.recv("%d,%d", &ufd, &len);
+		if(rc){
+			return;
+		}
+		Delay(1000);
+	}
 
 	printf("Transmitted %d bytes using socket %d \n", len, ufd);
 }

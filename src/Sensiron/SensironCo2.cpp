@@ -18,19 +18,19 @@ float SensironCo2::Co2(){
 }
 
 SensironCo2::SensironCo2() {
-	i2c = I2C1;
+	i2c = I2C0;
 
 	I2C_Init_TypeDef init = I2C_INIT_DEFAULT;
 
-	CMU_ClockEnable(cmuClock_I2C1, true);
+	CMU_ClockEnable(cmuClock_I2C0, true);
 
 	init.enable = true;
 	init.master = true;
 
-	GPIO_PinModeSet(gpioPortC, 5, gpioModeWiredAndPullUpFilter, 1);
-	GPIO_PinModeSet(gpioPortC, 4, gpioModeWiredAndPullUpFilter, 1);
+	GPIO_PinModeSet(gpioPortD, 6, gpioModeWiredAndPullUpFilter, 1);
+	GPIO_PinModeSet(gpioPortD, 7, gpioModeWiredAndPullUpFilter, 1);
 
-	i2c->ROUTE = I2C_ROUTE_SDAPEN | I2C_ROUTE_SCLPEN | I2C_ROUTE_LOCATION_LOC0;
+	i2c->ROUTE = I2C_ROUTE_SDAPEN | I2C_ROUTE_SCLPEN | I2C_ROUTE_LOCATION_LOC1;
 
 	I2C_Init(i2c, &init);
 

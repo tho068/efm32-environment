@@ -85,7 +85,7 @@ int ATParser::send(std::string command) {
 	}
 
 	putc('\r');
-	putc('\n');
+	//putc('\n');
 
 	return AT_OK;
 }

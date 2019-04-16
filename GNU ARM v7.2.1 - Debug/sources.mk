@@ -33,5 +33,6 @@ src/Common \
 src/Nbiot \
 src/NovaSensor \
 src/Sensiron \
+src/Sps30 \
 src \
 
