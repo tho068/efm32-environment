@@ -48,7 +48,7 @@ int main(void)
 	SysTick_Init();
 
 	SensironCo2 	co2Sensor;
-	Sps30			pm(I2C1);
+	Sps30			pm;
 	nbiot 			nb;
 
 	float 			ppm10, ppm25, ppco2;
@@ -94,6 +94,8 @@ int main(void)
 
 		currentTime = SysTick_GetTicks();
 
-		Delay(250);
+		printf("PM25: %f, PM10: %f, C02: %f, RH: %f, Temp: %f \n", pm.PM25(), pm.PM10(), co2Sensor.Co2(), co2Sensor.Humidity(), co2Sensor.Temperature());
+
+		Delay(1000);
 	}
 }
