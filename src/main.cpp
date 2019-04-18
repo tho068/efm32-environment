@@ -62,7 +62,7 @@ int main(void)
 
 	while (true) {
 		pm.readMeasurement();
-		co2Sensor.getMeasurement();
+		co2Sensor.ReadMeasurements();
 
 		dpm10 = abs(pm.PM10() - ppm10);
 		dpm25 = abs(pm.PM25() - ppm25);

@@ -30,6 +30,7 @@ CMSIS/EFM32GG \
 emlib \
 src/ATParser \
 src/Common \
+src/ModBusRTU \
 src/Nbiot \
 src/NovaSensor \
 src/Sensiron \

@@ -12,6 +12,7 @@ RM := rm -rf
 -include src/Sensiron/subdir.mk
 -include src/NovaSensor/subdir.mk
 -include src/Nbiot/subdir.mk
+-include src/ModBusRTU/subdir.mk
 -include src/Common/subdir.mk
 -include src/ATParser/subdir.mk
 -include src/subdir.mk
@@ -52,7 +53,7 @@ all: efm32-environment.axf
 efm32-environment.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GNU ARM C++ Linker'
-	arm-none-eabi-g++ -g -gdwarf-2 -mcpu=cortex-m3 -mthumb -T "efm32-environment.ld" --specs=nosys.specs -Xlinker --gc-sections -Xlinker -Map="efm32-environment.map" --specs=nano.specs -u _printf_float -o efm32-environment.axf "./CMSIS/EFM32GG/startup_gcc_efm32gg.o" "./CMSIS/EFM32GG/system_efm32gg.o" "./emlib/bsp_trace.o" "./emlib/em_cmu.o" "./emlib/em_gpio.o" "./emlib/em_i2c.o" "./emlib/em_leuart.o" "./emlib/em_system.o" "./emlib/em_timer.o" "./emlib/em_usart.o" "./emlib/retargetio.o" "./emlib/retargetswo.o" "./src/ATParser/ATParser.o" "./src/Common/timer.o" "./src/Nbiot/nbiot.o" "./src/NovaSensor/NovaSensor.o" "./src/Sensiron/SensironCo2.o" "./src/Sps30/Sps30.o" "./src/main.o" -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
+	arm-none-eabi-g++ -g -gdwarf-2 -mcpu=cortex-m3 -mthumb -T "efm32-environment.ld" --specs=nosys.specs -Xlinker --gc-sections -Xlinker -Map="efm32-environment.map" --specs=nano.specs -u _printf_float -o efm32-environment.axf "./CMSIS/EFM32GG/startup_gcc_efm32gg.o" "./CMSIS/EFM32GG/system_efm32gg.o" "./emlib/bsp_trace.o" "./emlib/em_cmu.o" "./emlib/em_gpio.o" "./emlib/em_i2c.o" "./emlib/em_leuart.o" "./emlib/em_system.o" "./emlib/em_timer.o" "./emlib/em_usart.o" "./emlib/retargetio.o" "./emlib/retargetswo.o" "./src/ATParser/ATParser.o" "./src/Common/timer.o" "./src/ModBusRTU/ModBusRTU.o" "./src/ModBusRTU/ModBusRTUFrame.o" "./src/Nbiot/nbiot.o" "./src/NovaSensor/NovaSensor.o" "./src/Sensiron/SensironCo2.o" "./src/Sps30/Sps30.o" "./src/main.o" -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

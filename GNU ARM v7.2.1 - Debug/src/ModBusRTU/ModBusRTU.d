@@ -1,4 +1,6 @@
-src/main.o: ../src/main.cpp \
+src/ModBusRTU/ModBusRTU.o: ../src/ModBusRTU/ModBusRTU.cpp \
+ ../src/ModBusRTU/ModBusRTU.h \
+ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_usart.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\device\siliconlabs\efm32gg\include\em_device.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\device\siliconlabs\efm32gg\include\efm32gg990f1024.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\cmsis\include\core_cm3.h \
@@ -54,25 +56,17 @@ src/main.o: ../src/main.cpp \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\device\siliconlabs\efm32gg\include\efm32gg_uart.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\device\siliconlabs\efm32gg\include\efm32gg_af_ports.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\device\siliconlabs\efm32gg\include\efm32gg_af_pins.h \
- d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_chip.h \
- d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_system.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_gpio.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_bus.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_assert.h \
- d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_cmu.h \
- d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\hardware\kit\common\drivers\retargetswo.h \
- C:\Users\Thomas\ Holden\source\efm32-environment\src\Sps30/Sps30.h \
- d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_i2c.h \
- d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_gpio.h \
- d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_usart.h \
- C:\Users\Thomas\ Holden\source\efm32-environment\src\Common/timer.h \
- C:\Users\Thomas\ Holden\source\efm32-environment\src\ATParser/ATParser.h \
- d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_leuart.h \
- C:\Users\Thomas\ Holden\source\efm32-environment\src\Sensiron/SensironCo2.h \
- C:\Users\Thomas\ Holden\source\efm32-environment\src\ModBusRTU/ModBusRTU.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_timer.h \
- C:\Users\Thomas\ Holden\source\efm32-environment\src\ModBusRTU/ModBusRTUFrame.h \
- C:\Users\Thomas\ Holden\source\efm32-environment\src\Nbiot/nbiot.h
+ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_cmu.h \
+ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_gpio.h \
+ ../src/ModBusRTU/ModBusRTUFrame.h
+
+../src/ModBusRTU/ModBusRTU.h:
+
+d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_usart.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\device\siliconlabs\efm32gg\include\em_device.h:
 
@@ -184,40 +178,16 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\device\siliconlabs\efm32gg\include\efm32gg_af_pins.h:
 
-d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_chip.h:
-
-d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_system.h:
-
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_gpio.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_bus.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_assert.h:
 
+d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_timer.h:
+
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_cmu.h:
-
-d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\hardware\kit\common\drivers\retargetswo.h:
-
-C:\Users\Thomas\ Holden\source\efm32-environment\src\Sps30/Sps30.h:
-
-d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_i2c.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_gpio.h:
 
-d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_usart.h:
-
-C:\Users\Thomas\ Holden\source\efm32-environment\src\Common/timer.h:
-
-C:\Users\Thomas\ Holden\source\efm32-environment\src\ATParser/ATParser.h:
-
-d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_leuart.h:
-
-C:\Users\Thomas\ Holden\source\efm32-environment\src\Sensiron/SensironCo2.h:
-
-C:\Users\Thomas\ Holden\source\efm32-environment\src\ModBusRTU/ModBusRTU.h:
-
-d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_timer.h:
-
-C:\Users\Thomas\ Holden\source\efm32-environment\src\ModBusRTU/ModBusRTUFrame.h:
-
-C:\Users\Thomas\ Holden\source\efm32-environment\src\Nbiot/nbiot.h:
+../src/ModBusRTU/ModBusRTUFrame.h:

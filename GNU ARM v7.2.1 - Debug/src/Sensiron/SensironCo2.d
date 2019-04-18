@@ -61,7 +61,11 @@ src/Sensiron/SensironCo2.o: ../src/Sensiron/SensironCo2.cpp \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_assert.h \
  C:\Users\Thomas\ Holden\source\efm32-environment\src\Common/timer.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_cmu.h \
- d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_gpio.h
+ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_gpio.h \
+ C:\Users\Thomas\ Holden\source\efm32-environment\src\ModBusRTU/ModBusRTU.h \
+ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_usart.h \
+ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_timer.h \
+ C:\Users\Thomas\ Holden\source\efm32-environment\src\ModBusRTU/ModBusRTUFrame.h
 
 ../src/Sensiron/SensironCo2.h:
 
@@ -188,3 +192,11 @@ C:\Users\Thomas\ Holden\source\efm32-environment\src\Common/timer.h:
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_cmu.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_gpio.h:
+
+C:\Users\Thomas\ Holden\source\efm32-environment\src\ModBusRTU/ModBusRTU.h:
+
+d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_usart.h:
+
+d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.5\platform\emlib\inc\em_timer.h:
+
+C:\Users\Thomas\ Holden\source\efm32-environment\src\ModBusRTU/ModBusRTUFrame.h:
