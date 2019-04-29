@@ -69,8 +69,8 @@ int SensironCo2::ReadMeasurements() {
 	int res_len = modBusRTU.ModBusRTUReceiveFrame(response);
 
 	tempCO2 = (response[1] << 24 | response[2] << 16 | response[3] << 8 | response[4]);
-	tempHumidity = (response[5] << 24 | response[6] << 16 | response[7] << 8 | response[8]);
-    tempTemperature = (response[9] << 24 | response[10] << 16 | response[11] << 8 | response[12]);
+	tempTemperature = (response[5] << 24 | response[6] << 16 | response[7] << 8 | response[8]);
+    tempHumidity = (response[9] << 24 | response[10] << 16 | response[11] << 8 | response[12]);
 
 	memcpy(&co2, &tempCO2, sizeof(co2));
 	memcpy(&temp, &tempTemperature, sizeof(temp));

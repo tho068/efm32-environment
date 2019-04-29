@@ -41,7 +41,7 @@
     usartStopbits1,        /* 1 stop bit. */                                                       \
     false,                 /* Do not disable majority vote. */                                     \
     false,                 /* Not USART PRS input mode. */                                         \
-    0,                     /* PRS channel 0. */                                                    \
+	usartPrsRxCh0,         /* PRS channel 0. */                                                    \
     false,                 /* Auto CS functionality enable/disable switch */                       \
   }
 
